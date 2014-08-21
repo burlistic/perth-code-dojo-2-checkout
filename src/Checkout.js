@@ -1,22 +1,28 @@
 window.willSuperStore = window.willSuperStore || {};
 
-Checkout = (function (window) {
+window.willSuperStore.checkout = (function (namespace) {
     "use strict";
 
-    var Checkout = function () { };
+    //namespace.Checkout = function () { };
 
-    Checkout.prototype.addItem = function () {
+    //namespace.Checkout.prototype.addItem = function () {
 
+    //}
+
+    //namespace.Checkout.prototype.total = function () {
+    //    return 0;
+    //}
+
+    //return namespace;
+
+
+    return {
+            total: function () { return 0; },
+     //   printPriv: function () { console.log(priv); }
     }
-
-    Checkout.prototype.total = function () {
-        return 0;
-    }
-
-    return Checkout;
 
     
-})(window);
+})(window.willSuperStore);
 
 
 //(function (willSuperStore, $, undefined) {
