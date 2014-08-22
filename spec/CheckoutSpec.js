@@ -2,7 +2,7 @@ describe("Checkout", function() {
 
 	beforeEach(function() {
 	    //willSuperStore.Checkout = new willsSuperStore.Checkout();
-	    checkout = window.willSuperStore.checkout;
+	    checkout = new willSuperStore.Checkout();
 	});
 
 

@@ -1,47 +1,20 @@
+
 window.willSuperStore = window.willSuperStore || {};
 
-window.willSuperStore.checkout = (function (namespace) {
+(function (willSuperStore, undefined) {
     "use strict";
 
-    //namespace.Checkout = function () { };
+    // normally variables & functions start with a lowercase letter but with modules, that is not the case.
+    // The general tradition is to start them with a capital letter instead.
+    function Checkout() {
 
-    //namespace.Checkout.prototype.addItem = function () {
-
-    //}
-
-    //namespace.Checkout.prototype.total = function () {
-    //    return 0;
-    //}
-
-    //return namespace;
-
-
-    return {
-            total: function () { return 0; },
-     //   printPriv: function () { console.log(priv); }
+        // `this` refers to the instance of `MyModule` when created
+        this.total = function total() {
+            return 0;
+        };
     }
 
-    
-})(window.willSuperStore);
+    // expose access to the constructor
+    willSuperStore.Checkout = Checkout;
 
-
-//(function (willSuperStore, $, undefined) {
-  //  "use strict";
-
-    
-    //willSuperStore.Checkout = function () { };
-
-    //willSuperStore.Checkout.prototype.addItem = function () {
-
-    //}
-
-    //willSuperStore.Checkout.prototype.total = function () {
-    //    return 0;
-    //}
-
-    //return willSuperStore;
-
-//})(window.willSuperStore || {}, jQuery);
-
-
-    
+})(window.willSuperStore);    
