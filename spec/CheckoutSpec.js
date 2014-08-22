@@ -38,16 +38,16 @@ describe("Checkout", function() {
 	    expect(checkout.total()).toEqual(2);
 	});
 
-	//it("should apply the 2 for 3 apples discount and return the correct total when 4 apples are purchased", function () {
+	it("should apply the 2 for 3 apples discount and return the correct total when 4 apples are purchased", function () {
 
-	//    checkout.addDiscount(new willSuperStore.ThreeForTwoAppleDiscount());
+	    checkout.addDiscount(new willSuperStore.ThreeForTwoAppleDiscount());
 
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
 
-	//    expect(checkout.total()).toEqual(3);
-	//});
+	    expect(checkout.total()).toEqual(3);
+	});
 
 });
