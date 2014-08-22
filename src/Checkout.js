@@ -1,20 +1,22 @@
+// Module pattern example
 
+// creating namespace
 window.willSuperStore = window.willSuperStore || {};
 
+// passing in undefined incase it get poluted
 (function (willSuperStore, undefined) {
+    // enforcing strict mode
     "use strict";
 
-    // normally variables & functions start with a lowercase letter but with modules, that is not the case.
-    // The general tradition is to start them with a capital letter instead.
-    function Checkout() {
+    // Common convention to make modules uppercase but prefer to keep lint tool happy
+    function checkout() {
 
-        // `this` refers to the instance of `MyModule` when created
         this.total = function total() {
             return 0;
         };
     }
 
     // expose access to the constructor
-    willSuperStore.Checkout = Checkout;
+    willSuperStore.Checkout = checkout;
 
 })(window.willSuperStore);    
