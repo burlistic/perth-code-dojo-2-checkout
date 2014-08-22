@@ -23,15 +23,11 @@ window.willSuperStore = window.willSuperStore || {};
 
                     applesCount++;
 
-                    // TODO - improve to apply multi discount
                     if (applesCount > 2) {
                         checkout.items[i].cost = 0;
 
                         applesCount = 0;
-                    }
-
-                   
-                    
+                    }                   
                 }
 
             }

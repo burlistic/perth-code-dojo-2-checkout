@@ -50,4 +50,17 @@ describe("Checkout", function() {
 	    expect(checkout.total()).toEqual(3);
 	});
 
+	it("should apply the 2 for 3 apples discount and return the correct total when 4 apples are purchased along with a cherry in the midldle", function () {
+
+	    checkout.addDiscount(new willSuperStore.ThreeForTwoAppleDiscount());
+
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("cherry", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+
+	    expect(checkout.total()).toEqual(4);
+	});
+
 });
