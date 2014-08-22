@@ -20,12 +20,17 @@ window.willSuperStore = window.willSuperStore || {};
                 return 0;
             }
 
-            return this.items[0].cost();
+            var runningTotal = 0;
+
+            for (var i = 0; i < this.items.length; i++) {
+                // TODO - type check?
+                runningTotal = runningTotal + this.items[i].cost;
+            }
+
+            return runningTotal;
         };
 
         this.addItem = function addItem(item) {
-
-            
 
             // TODO - better way to add to an array?
             this.items[this.items.length] = item;

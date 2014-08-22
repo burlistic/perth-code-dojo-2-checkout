@@ -18,13 +18,13 @@ describe("Checkout", function() {
 	    //expect(checkout.total()).toEqual(1);
 	});
 
-	//it("should return the correct running total when several items are added", function () {
+	it("should return the correct running total when several items are added", function () {
 
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
-	//    checkout.addItem(new willSuperStore.Item("apple", 1));
-	//    checkout.addItem(new willSuperStore.Item("cherry", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("apple", 1));
+	    checkout.addItem(new willSuperStore.Item("cherry", 1));
 
-	//    expect(checkout.total()).toEqual(3);
-	//});
+	    expect(checkout.total()).toEqual(3);
+	});
 
 });
