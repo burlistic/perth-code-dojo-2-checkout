@@ -13,6 +13,7 @@ window.willSuperStore = window.willSuperStore || {};
 
         // TODO - make private
         this.items = new Array();
+        this.discounts = new Array();
 
         this.total = function total() {
 
@@ -20,8 +21,14 @@ window.willSuperStore = window.willSuperStore || {};
                 return 0;
             }
 
-            var runningTotal = 0;
+            // Apply discounts
+            for (var i = 0; i < this.discounts.length; i++) {
+                // TODO - type check?
+                this.discounts[i].apply(this);
+            }
 
+            // Calculate the total
+            var runningTotal = 0;
             for (var i = 0; i < this.items.length; i++) {
                 // TODO - type check?
                 runningTotal = runningTotal + this.items[i].cost;
@@ -34,6 +41,11 @@ window.willSuperStore = window.willSuperStore || {};
 
             // TODO - better way to add to an array?
             this.items[this.items.length] = item;
+        }
+
+        this.addDiscount = function addDiscount(discount) {
+
+            this.discounts[this.discounts.length] = discount;
         }
     
     }
