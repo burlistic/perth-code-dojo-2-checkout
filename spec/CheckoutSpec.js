@@ -99,4 +99,13 @@ describe("Checkout", function() {
 
 	    expect(checkout.total()).toEqual(17.5);
 	});
+
+	it("no discount should be applied when buying 1 cherry", function () {
+
+	    checkout.addDiscount(new willSuperStore.ThreeCherriesAndSave());
+
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	  
+	    expect(checkout.total()).toEqual(5);
+	});
 });
