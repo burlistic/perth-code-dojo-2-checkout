@@ -63,4 +63,27 @@ describe("Checkout", function() {
 	    expect(checkout.total()).toEqual(6.5);
 	});
 
+	it("should apply buy 3 cherries and save 7.5 discount and return the correct total when 3 cherries are purchased", function () {
+
+	    checkout.addDiscount(new willSuperStore.ThreeCherriesAndSave());
+
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    
+	    expect(checkout.total()).toEqual(7.5);
+	});
+
+
+	it("should apply buy 3 cherries and save 7.5 discount and return the correct total when 4 cherries are purchased", function () {
+
+	    checkout.addDiscount(new willSuperStore.ThreeCherriesAndSave());
+
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+
+	    expect(checkout.total()).toEqual(12.5);
+	});
 });
