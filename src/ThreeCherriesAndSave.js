@@ -24,28 +24,18 @@ window.willSuperStore = window.willSuperStore || {};
                 }
             }
 
-            if (count % 3 === 0) {
+            // how many are left that should not be discounted
+            var remander = count % 3;
 
-                for (var i = 0; i < checkout.items.length; i++) {
+            var totalToDiscount = count - remander;
 
-                    if (checkout.items[i].description === "cherry") {
-                        checkout.items[i].cost = checkout.items[i].cost / 2;
-                    }
-                }
-            } else {
+            for (var i = 0; i < checkout.items.length; i++) {
 
-                // how many are left that should not be discounted
-                var remander = count % 3;
-
-                var totalToDiscount = count - remander;
-
-                for (var i = 0; i < checkout.items.length; i++) {
-
-                    if (checkout.items[i].description === "cherry" && ((i+1) <= totalToDiscount)) {
-                        checkout.items[i].cost = checkout.items[i].cost / 2;
-                    }
+                if (checkout.items[i].description === "cherry" && ((i+1) <= totalToDiscount)) {
+                    checkout.items[i].cost = checkout.items[i].cost / 2;
                 }
             }
+            
         }
     }
 
