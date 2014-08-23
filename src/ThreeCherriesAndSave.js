@@ -32,13 +32,11 @@ window.willSuperStore = window.willSuperStore || {};
                         checkout.items[i].cost = checkout.items[i].cost / 2;
                     }
                 }
-            } else if (count % 3 === 1) {
-
-                console.log(count % 3 === 1);
+            } else {
 
                 for (var i = 0; i < checkout.items.length; i++) {
 
-                    if (checkout.items[i].description === "cherry" && i != 3) {
+                    if (checkout.items[i].description === "cherry" && ((i+1) % 3 != 0)) {
                         checkout.items[i].cost = checkout.items[i].cost / 2;
                     }
                 }
