@@ -127,6 +127,15 @@ describe("Checkout", function() {
 	    expect(checkout.total()).toEqual(2.5);
 	});
 
+	it("should return correct discount when apples reduced by 50%", function () {
+
+	    checkout.addDiscount(new willSuperStore.Reduction("apple", 0.5));
+
+	    checkout.addItem(new willSuperStore.Item("apple", 0.5));
+
+	    expect(checkout.total()).toEqual(0.25);
+	});
+
     // todo - test combining apple and cherry discunts
 
     // todo - write test to make sure only one discount is appied to cheeries. How to pick which discount? Price reduction always first?
