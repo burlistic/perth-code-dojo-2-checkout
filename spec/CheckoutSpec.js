@@ -111,7 +111,7 @@ describe("Checkout", function() {
 
 	it("should return correct discount when cherries reduced by 20%", function () {
 
-	    checkout.addDiscount(new willSuperStore.CherriesReduction(0.2));
+	    checkout.addDiscount(new willSuperStore.Reduction("cherry", 0.2));
 
 	    checkout.addItem(new willSuperStore.Item("cherry", 5));
 
@@ -120,7 +120,7 @@ describe("Checkout", function() {
 
 	it("should return correct discount when cherries reduced by 50%", function () {
 
-	    checkout.addDiscount(new willSuperStore.CherriesReduction(0.5));
+	    checkout.addDiscount(new willSuperStore.Reduction("cherry", 0.5));
 
 	    checkout.addItem(new willSuperStore.Item("cherry", 5));
 
