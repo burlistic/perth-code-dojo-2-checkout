@@ -34,9 +34,14 @@ window.willSuperStore = window.willSuperStore || {};
                 }
             } else {
 
+                // how many are left that should not be discounted
+                var remander = count % 3;
+
+                var totalToDiscount = count - remander;
+
                 for (var i = 0; i < checkout.items.length; i++) {
 
-                    if (checkout.items[i].description === "cherry" && ((i+1) % 3 != 0)) {
+                    if (checkout.items[i].description === "cherry" && ((i+1) <= totalToDiscount)) {
                         checkout.items[i].cost = checkout.items[i].cost / 2;
                     }
                 }

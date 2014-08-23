@@ -87,16 +87,16 @@ describe("Checkout", function() {
 	    expect(checkout.total()).toEqual(12.5);
 	});
 
-	//it("should apply buy 3 cherries and save 7.5 discount and return the correct total when 5 cherries are purchased", function () {
+	it("should apply buy 3 cherries and save 7.5 discount and return the correct total when 5 cherries are purchased", function () {
 
-	//    checkout.addDiscount(new willSuperStore.ThreeCherriesAndSave());
+	    checkout.addDiscount(new willSuperStore.ThreeCherriesAndSave());
 
-	//    checkout.addItem(new willSuperStore.Item("cherry", 5));
-	//    checkout.addItem(new willSuperStore.Item("cherry", 5));
-	//    checkout.addItem(new willSuperStore.Item("cherry", 5));
-	//    checkout.addItem(new willSuperStore.Item("cherry", 5));
-	//    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
+	    checkout.addItem(new willSuperStore.Item("cherry", 5));
 
-	//    expect(checkout.total()).toEqual(17.5);
-	//});
+	    expect(checkout.total()).toEqual(17.5);
+	});
 });
