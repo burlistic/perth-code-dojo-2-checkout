@@ -1,0 +1,31 @@
+// Module pattern example
+
+// creating namespace.. but checking it doesn't get overwritten if it alredy exists
+window.willSuperStore = window.willSuperStore || {};
+
+// passing in undefined in case it get polluted
+(function (willSuperStore, undefined) {
+    // enforcing strict mode
+    "use strict";
+
+    // TODO - refactor to be a generic discount
+
+    // Common convention to make modules uppercase but prefer to keep lint tool happy
+    function cherriesReduction() {
+
+        this.apply = function(checkout) {
+            
+
+            for (var i = 0; i < checkout.items.length; i++) {
+
+                if (checkout.items[i].description === "cherry") {
+                    checkout.items[i].cost = checkout.items[i].cost * 0.80;
+                }
+            }
+        }
+    }
+
+    // expose access to the constructor
+    willSuperStore.CherriesReduction = cherriesReduction;
+
+})(window.willSuperStore);    
