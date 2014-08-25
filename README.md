@@ -1,25 +1,35 @@
-Code for Perth Code Dojo 1
+Code for Perth Code Dojo 2
 
-Slides - https://speakerdeck.com/burlistic/perth-code-dojo-1
+Slides - https://speakerdeck.com/burlistic/perth-code-dojo-2-checkout
 
-My example using JS and the Karma test runner. To use Karam install and run in the normal way
+A checkout excerise designed to mirror real life requirements that might be fed in. A simple problem on the surfice with some interesting challenges. Well suited to emergent design, TDD, and refactoring.
 
-Karma start [path to configh file]
+My example using well formed professional quality JS. Use of namespaces, modular pattern, strict mode and trailed some new linting tools.
 
 Instructions
 
-Write a program performs a binary chop (search) to find an index in a sorted array of values.
+Implement a check out that handles the following items and returns a running total
 
-It achieves some efficiency by halving the number of items under consideration each time it probes the values: in the first pass it determines whether the required value is in the top or the bottom half of the list of values. In the second pass in considers only this half, again dividing it into two. It stops when it finds the value it is looking for, or when it runs out of array to search.
+Scenario 1
 
-Interface and Test Examples
+Product		Cost		Special
+Apples		50 cents	Buy 2 get 3rd free
+Cherries	5 dollars
+Mangos		3 dollars
 
-chop(int, array_of_int)  -> int
 
-assert_equal(-1, chop(3, [1]))
-assert_equal(0,  chop(1, [1]))
-assert_equal(0,  chop(1, [1, 3, 5]))
-assert_equal(2,  chop(5, [1, 3, 5, 7
+Scenario 2
+
+Buy 3 cherries and save 7.50
+
+
+Scenario 3
+
+20 % off Cherries
+
+Bonus: Apply a 80% discount. What happens to your total balance?
+
+
 
 Challenge: think of another way to implement the binary chop
 
