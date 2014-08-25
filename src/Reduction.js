@@ -11,7 +11,7 @@ window.willSuperStore = window.willSuperStore || {};
     // TODO - refactor to be a generic discount
 
     // Common convention to make modules uppercase but prefer to keep lint tool happy
-    function Reduction(itemDescription, percentage) {
+    function reduction(itemDescription, percentage) {
 
         this.apply = function(checkout) {
             
@@ -25,6 +25,6 @@ window.willSuperStore = window.willSuperStore || {};
     }
 
     // expose access to the constructor
-    willSuperStore.Reduction =  Reduction;
+    willSuperStore.Reduction =  reduction;
 
 })(window.willSuperStore);    
